@@ -6,9 +6,11 @@ BRANCH=${QS_GIT_BRANCH:-master}
 # Temp working space
 TMPDIR=$(mktemp -d)
 
+DEBUG=1
 
 # FUNCTIONS
 cleanup() {
+    [[ $DEBUG -gt 0 ]] && set -x
     rm -rf "$TMPDIR"
 }
 
@@ -21,11 +23,13 @@ die() {
 
 
 check_git() {
+    [[ $DEBUG -gt 0 ]] && set -x
     which git || die "Can't find 'git'. Is 'git' installed and on your path?"
 }
 
 
 validate_repo() {
+    [[ $DEBUG -gt 0 ]] && set -x
     [[ -z "$QS_REPO" ]] && die "QS_REPO not defined."
     git ls-remote "$QS_REPO" &>/dev/null \
         || die "Invalid or Inaccessible repository: '$QS_REPO'"
@@ -33,6 +37,7 @@ validate_repo() {
 
 
 clone_repo() {
+    [[ $DEBUG -gt 0 ]] && set -x
     git clone \
         --single-branch \
         --branch "$BRANCH" \
@@ -41,13 +46,13 @@ clone_repo() {
 }
 
 run_setup() {
+    [[ $DEBUG -gt 0 ]] && set -x
     local _setup=$TMPDIR/setup.sh
-    if [[ -f "$_setup" ]] ; then
-        $TMPDIR/setup.sh
-    else
-        || die "Setup script not found: '$_setup'"
-    fi
+    [[ -f "$_setup" ]] || die "Setup script not found: '$_setup'"
+    $TMPDIR/setup.sh
 }
+
+[[ $DEBUG -gt 0 ]] && set -x
 
 check_git
 
