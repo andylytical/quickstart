@@ -5,6 +5,7 @@ Boilerplate for a repo with quickstart supporting `curl | bash` syntax
 - In your repo:
   - Create a file called `setup.sh` at the base of your repo
     - This bash script should do all the work of installing your repo
+    - Ensure setup.sh is executable
   - Copy the lines below into your README
   - Replace QS_REPO with your repo url
 ```bash
