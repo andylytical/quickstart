@@ -23,5 +23,7 @@ curl https://raw.githubusercontent.com/andylytical/quickstart/master/quickstart.
 - Copy/paste the above lines in your Bash terminal window
 - Expected output:
 ```
-Hello from ...
+Hello from '/tmp/tmp.81DzXvvQ6s/setup.sh'
+Install dir: '/home/aloftus/junk'
+Nothing else to do.
 ```
