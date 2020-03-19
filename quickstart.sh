@@ -40,7 +40,7 @@ clone_repo() {
     git clone \
         --single-branch \
         --branch "$BRANCH" \
-        https://github.com/ncsa/xcat-tools.git \
+        "$REPO" \
         $TMPDIR
 }
 
