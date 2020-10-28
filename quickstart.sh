@@ -49,7 +49,7 @@ run_setup() {
     [[ $DEBUG -gt 0 ]] && set -x
     local _setup=$TMPDIR/setup.sh
     [[ -f "$_setup" ]] || die "Setup script not found: '$_setup'"
-    $TMPDIR/setup.sh
+    "$_setup"
 }
 
 [[ $DEBUG -gt 0 ]] && set -x
