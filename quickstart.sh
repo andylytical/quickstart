@@ -2,6 +2,7 @@
 
 # Branch to clone from
 BRANCH=${QS_GIT_BRANCH:-master}
+[[ "$QS_BRANCH" ]] && BRANCH="$QS_BRANCH"
 
 # Temp working space
 TMPDIR=$(mktemp -d)
