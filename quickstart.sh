@@ -9,7 +9,7 @@ fi
 
 # Branch to clone from
 if [[ -n "${QS_GIT_BRANCH}" ]] ; then
-  BRANCH="${QS__GIT_BRANCH}"
+  BRANCH="${QS_GIT_BRANCH}"
 elif [[ -n "${QS_BRANCH}" ]] ; then
   BRANCH="${QS_BRANCH}"
 else
