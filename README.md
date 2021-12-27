@@ -10,15 +10,15 @@ Boilerplate for a repo with quickstart supporting `curl | bash` syntax
   - Replace QS_GIT_REPO with your repo url
 ```bash
 export QS_GIT_REPO=https://github.com/andylytical/quickstart
-#export QS_GIT_BRANCH=branch_name  #optional - specify a branch other than master
-curl https://raw.githubusercontent.com/andylytical/quickstart/master/quickstart.sh | bash
+#export QS_GIT_BRANCH=branch_name  #optional - specify a branch other than main
+curl https://raw.githubusercontent.com/andylytical/quickstart/main/quickstart.sh | bash
 ```
 
 # Example Usage
 ```bash
 export QS_GIT_REPO=https://github.com/andylytical/quickstart
-#export QS_GIT_BRANCH=branch_name  #optional - specify a branch other than master
-curl https://raw.githubusercontent.com/andylytical/quickstart/master/quickstart.sh | bash
+#export QS_GIT_BRANCH=branch_name  #optional - specify a branch other than main
+curl https://raw.githubusercontent.com/andylytical/quickstart/main/quickstart.sh | bash
 ```
 - Copy/paste the above lines in your Bash terminal window
 - Expected output:
