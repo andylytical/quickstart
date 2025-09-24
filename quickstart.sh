@@ -17,10 +17,6 @@ elif [[ -n "${QS_BRANCH}" ]] ; then
 fi
 [[ -z "${BRANCH}" ]] && BRANCH=main
 
-echo "REPO : '${REPO}'"
-echo "BRANCH : '${BRANCH}'"
-exit 1
-
 # Temp working space
 TMPDIR=$(mktemp -d)
 
