@@ -2,9 +2,11 @@
 
 # Allow QS_REPO and QS_GIT_REPO
 if [[ -n "${QS_GIT_REPO}" ]] ; then
-  REPO="${QS_GIT_REPO}"
+  REPO="${QS_GIT_REPO%%/tree/*}"
+  BRANCH="${QS_GIT_REPO##*/tree/}"
 else
-  REPO="${QS_REPO}"
+  REPO="${QS_REPO%%/tree/*}"
+  BRANCH="${QS_REPO##*/tree/}"
 fi
 
 # Branch to clone from
@@ -12,9 +14,12 @@ if [[ -n "${QS_GIT_BRANCH}" ]] ; then
   BRANCH="${QS_GIT_BRANCH}"
 elif [[ -n "${QS_BRANCH}" ]] ; then
   BRANCH="${QS_BRANCH}"
-else
-  BRANCH=main
 fi
+[[ -z "${BRANCH}" ]] && BRANCH=main
+
+echo "REPO : '${REPO}'"
+echo "BRANCH : '${BRANCH}'"
+exit 1
 
 # Temp working space
 TMPDIR=$(mktemp -d)
